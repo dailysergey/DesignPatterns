@@ -19,110 +19,109 @@ namespace AbstractFactory
 
             Console.ReadLine();
         }
+    } 
+    abstract class Weapon
+    {
+        public abstract void Hit();
+    }
 
-        abstract class Weapon
+
+    abstract class Movement
+    {
+        public abstract void Move();
+    }
+
+
+    class Arbalet : Weapon
+    {
+        public override void Hit()
         {
-            public abstract void Hit();
+            Console.WriteLine("Pif-Paf");
+        }
+    }
+
+
+    class Sword : Weapon
+    {
+        public override void Hit()
+        {
+            Console.WriteLine("Hit with the sword");
+        }
+    }
+
+
+    class StepMovement : Movement
+    {
+        public override void Move()
+        {
+            Console.WriteLine("Steping");
+        }
+    }
+
+
+    class RunMovement : Movement
+    {
+        public override void Move()
+        {
+            Console.WriteLine("Running");
+        }
+    }
+
+
+    abstract class HeroFactory
+    {
+        public abstract Movement CreateMovement();
+        public abstract Weapon CreateWeapon();
+    }
+
+
+    class OrkFactory : HeroFactory
+    {
+        public override Movement CreateMovement()
+        {
+            return new StepMovement();
         }
 
-
-        abstract class Movement
+        public override Weapon CreateWeapon()
         {
-            public abstract void Move();
+            return new Arbalet();
+        }
+    }
+
+
+    class VoinFactory : HeroFactory
+    {
+        public override Movement CreateMovement()
+        {
+            return new RunMovement();
         }
 
-
-        class Arbalet : Weapon
+        public override Weapon CreateWeapon()
         {
-            public override void Hit()
-            {
-                Console.WriteLine("Pif-Paf");
-            }
+            return new Sword();
         }
+    }
 
+    //Client
+    //tip: class
+    class Hero
+    {
+        private Weapon weapon;
+        private Movement movement;
 
-        class Sword : Weapon
+        //tip: ctor
+        public Hero(HeroFactory factory)
         {
-            public override void Hit()
-            {
-                Console.WriteLine("Hit with the sword");
-            }
+            weapon = factory.CreateWeapon();
+            movement = factory.CreateMovement();
         }
-
-
-        class StepMovement : Movement
+        public void Run()
         {
-            public override void Move()
-            {
-                Console.WriteLine("Steping");
-            }
+            movement.Move();
         }
-
-
-        class RunMovement : Movement
+        public void Hit()
         {
-            public override void Move()
-            {
-                Console.WriteLine("Running");
-            }
-        }
-
-
-        abstract class HeroFactory
-        {
-            public abstract Movement CreateMovement();
-            public abstract Weapon CreateWeapon();
-        }
-
-
-        class OrkFactory : HeroFactory
-        {
-            public override Movement CreateMovement()
-            {
-                return new StepMovement();
-            }
-
-            public override Weapon CreateWeapon()
-            {
-                return new Arbalet();
-            }
-        }
-
-
-        class VoinFactory : HeroFactory
-        {
-            public override Movement CreateMovement()
-            {
-                return new RunMovement();
-            }
-
-            public override Weapon CreateWeapon()
-            {
-                return new Sword();
-            }
-        }
-
-        //Client
-        //tip: class
-        class Hero
-        {
-            private Weapon weapon;
-            private Movement movement;
-
-            //tip: ctor
-            public Hero(HeroFactory factory)
-            {
-                weapon = factory.CreateWeapon();
-                movement = factory.CreateMovement();
-            }
-            public void Run()
-            {
-                movement.Move();
-            }
-            public void Hit()
-            {
-                weapon.Hit();
-            }
+            weapon.Hit();
         }
     }
 }
