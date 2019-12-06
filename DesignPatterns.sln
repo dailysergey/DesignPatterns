@@ -15,9 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StructuralPatterns", "Struc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facade", "Facade\Facade.csproj", "{A9C9B32A-74ED-4AC8-A513-8B7F26B274C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.csproj", "{3A1E18EF-9F85-499A-8443-0CFAD7CD4DF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapter", "Adapter\Adapter.csproj", "{3A1E18EF-9F85-499A-8443-0CFAD7CD4DF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decorator", "Decorator\Decorator.csproj", "{A486427A-952E-468B-BE09-8F1B00D4000A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Decorator", "Decorator\Decorator.csproj", "{A486427A-952E-468B-BE09-8F1B00D4000A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BehavioralPatterns", "BehavioralPatterns", "{345F12A1-F412-446E-908B-EB7AC9B72E67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy", "Strategy\Strategy.csproj", "{78F2AA53-579D-4935-BAD2-C2E944FC3016}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +53,10 @@ Global
 		{A486427A-952E-468B-BE09-8F1B00D4000A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A486427A-952E-468B-BE09-8F1B00D4000A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A486427A-952E-468B-BE09-8F1B00D4000A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78F2AA53-579D-4935-BAD2-C2E944FC3016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78F2AA53-579D-4935-BAD2-C2E944FC3016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78F2AA53-579D-4935-BAD2-C2E944FC3016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78F2AA53-579D-4935-BAD2-C2E944FC3016}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +68,7 @@ Global
 		{A9C9B32A-74ED-4AC8-A513-8B7F26B274C5} = {21D58650-1E2F-4BEB-92F9-0A37FD10010E}
 		{3A1E18EF-9F85-499A-8443-0CFAD7CD4DF3} = {21D58650-1E2F-4BEB-92F9-0A37FD10010E}
 		{A486427A-952E-468B-BE09-8F1B00D4000A} = {21D58650-1E2F-4BEB-92F9-0A37FD10010E}
+		{78F2AA53-579D-4935-BAD2-C2E944FC3016} = {345F12A1-F412-446E-908B-EB7AC9B72E67}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7FA86548-A7E2-459D-87E4-DDB0F237FE6C}
