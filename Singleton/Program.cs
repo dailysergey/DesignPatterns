@@ -10,9 +10,8 @@ namespace Singleton
             comp.Launch("Windows 8.1");
             Console.WriteLine(comp.OS.Name);
 
-            // у нас не получится изменить ОС, так как объект уже создан    
-            OS.Current.Name="Windows 10";
-            comp.OS = OS.Current;
+            //can't change OS, cause it's already initialized
+            comp.OS = OS.GetCurrent("Windows 10");
             Console.WriteLine(comp.OS.Name);
 
             Console.ReadLine();
@@ -21,21 +20,32 @@ namespace Singleton
     class Computer
     {
         public OS OS { get; set; }
+        
         public void Launch(string osName)
         {
-            OS.Current.Name = osName;
+            OS = OS.GetCurrent(osName);
         }
     }
-    class OS
+
+    /// <summary>
+    /// Not thread safe
+    /// </summary>
+    sealed class OS
     {
-        private static readonly OS instance = new OS("");
-        public static OS Current => instance;
-        private OS(string name) {
+        private static OS current = null;
+
+        private OS(string name)
+        {
             Name = name;
         }
-       // private static OS instance;
 
-        public string Name { get;  set; }
+        public static OS GetCurrent(string name)
+        {
+            if (current == null)
+                current = new OS(name);
+            return current;
+        }
 
+        public string Name { get; set; }
     }
 }
