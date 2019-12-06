@@ -4,7 +4,7 @@ namespace Singleton
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Computer comp = new Computer();
             comp.Launch("Windows 8.1");

@@ -6,4 +6,4 @@ A class of which only a single instance can exist
 
 Ensure a class has only one instance and provide a global point of access to it.
 
-![Factory Method](https://www.dofactory.com/images/diagrams/net/singleton.gif)
+![Singleton](https://www.dofactory.com/images/diagrams/net/singleton.gif)
