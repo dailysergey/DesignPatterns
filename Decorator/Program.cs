@@ -4,7 +4,7 @@ namespace Decorator
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Pizza pizza1 = new ItalianPizza();
             pizza1 = new TomatoPizza(pizza1);
