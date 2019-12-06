@@ -26,4 +26,4 @@ Defines an existing interface that needs adapting.
 
 Collaborates with objects conforming to the Target interface.
 
-![Facade](https://www.dofactory.com/images/diagrams/net/adapter.gif)
+![Adapter](https://www.dofactory.com/images/diagrams/net/adapter.gif)
