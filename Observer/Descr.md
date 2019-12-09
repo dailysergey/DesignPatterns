@@ -18,8 +18,8 @@ The classes and objects participating in this pattern are:
 
 ### ConcreteSubject
 
-stores state of interest to ConcreteObserver
-sends a notification to its observers when its state changes
+* stores state of interest to ConcreteObserver
+* sends a notification to its observers when its state changes
 
 ### Observer
 
